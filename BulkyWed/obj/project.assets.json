@@ -1053,6 +1053,41 @@
             "rid": "win"
           }
         }
+      },
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.11",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        }
+      },
+      "Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utility.dll": {}
+        }
       }
     }
   },
@@ -2875,13 +2910,31 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess/DataAccess.csproj",
+      "msbuildProject": "../DataAccess/DataAccess.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
+    },
+    "Utility/1.0.0": {
+      "type": "project",
+      "path": "../Utility/Utility.csproj",
+      "msbuildProject": "../Utility/Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "DataAccess >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
-      "Microsoft.EntityFrameworkCore.Tools >= 7.0.11"
+      "Microsoft.EntityFrameworkCore.Tools >= 7.0.11",
+      "Models >= 1.0.0",
+      "Utility >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2916,7 +2969,17 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\engli\\OneDrive\\Desktop\\Bulky\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\engli\\OneDrive\\Desktop\\Bulky\\DataAccess\\DataAccess.csproj"
+            },
+            "C:\\Users\\engli\\OneDrive\\Desktop\\Bulky\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\engli\\OneDrive\\Desktop\\Bulky\\Models\\Models.csproj"
+            },
+            "C:\\Users\\engli\\OneDrive\\Desktop\\Bulky\\Utility\\Utility.csproj": {
+              "projectPath": "C:\\Users\\engli\\OneDrive\\Desktop\\Bulky\\Utility\\Utility.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
