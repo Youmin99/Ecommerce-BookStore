@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\engli\\OneDrive\\Desktop\\Bulky\\Models\\Models.csproj",
+      "projectUniqueName": "C:\\Users\\engli\\Source\\Repos\\Bulky\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "C:\\Users\\engli\\OneDrive\\Desktop\\Bulky\\Models\\Models.csproj",
+      "projectPath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\engli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\engli\\OneDrive\\Desktop\\Bulky\\Models\\obj\\",
+      "outputPath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

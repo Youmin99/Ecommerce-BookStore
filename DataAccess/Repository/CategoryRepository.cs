@@ -1,4 +1,4 @@
-﻿using BulkyBook.DataAccess.Repository;
+﻿using DataAccess.Repository;
 using DataAccess.Data;
 using DataAccess.Repository.IRepository;
 using Models;

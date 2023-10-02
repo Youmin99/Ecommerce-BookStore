@@ -44,6 +44,24 @@ namespace DataAccess.Migrations
 
                     b.ToTable("Categories");
                 });
+
+            modelBuilder.Entity("Models.CoverType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CoverTypes");
+                });
 #pragma warning restore 612, 618
         }
     }

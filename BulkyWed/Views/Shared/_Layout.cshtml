@@ -10,6 +10,17 @@
 </head>
 <body>
     <header>
+        <div class="d-flex justify-content-between bg-gray p-2 px-5" style="background-color:#f0f0f0">
+            <h2 class="navbar-brand text-dark " asp-area="" asp-controller="Home" asp-action="Index">Pet Shop</h2>
+            <nav class="d-flex justify-content-between pr-5 m">
+                <a class=nav-link asp-area="Customer" asp-controller="Cart" asp-action="Index">
+                    <i class="bi bi-cart"></i>
+                </a>
+                <a class=nav-link asp-area="Customer" asp-controller="Cart" asp-action="Index">
+                    login
+                </a>
+            </nav>
+        </div>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BulkyWed</a>
@@ -25,8 +36,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Content Managment</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="CoverType" asp-action="Index">Cover Type</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
