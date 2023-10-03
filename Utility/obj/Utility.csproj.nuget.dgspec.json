@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\engli\\Source\\Repos\\Bulky\\Utility\\Utility.csproj": {}
+    "C:\\Users\\engli\\source\\repos\\Bulky\\Utility\\Utility.csproj": {}
   },
   "projects": {
-    "C:\\Users\\engli\\Source\\Repos\\Bulky\\Utility\\Utility.csproj": {
+    "C:\\Users\\engli\\source\\repos\\Bulky\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\engli\\Source\\Repos\\Bulky\\Utility\\Utility.csproj",
+        "projectUniqueName": "C:\\Users\\engli\\source\\repos\\Bulky\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\Utility\\Utility.csproj",
+        "projectPath": "C:\\Users\\engli\\source\\repos\\Bulky\\Utility\\Utility.csproj",
         "packagesPath": "C:\\Users\\engli\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\Utility\\obj\\",
         "projectStyle": "PackageReference",

@@ -32,7 +32,6 @@ namespace BulkyWed.Areas.Admin.Controllers;
 	//GET
 	public IActionResult Upsert(int? id)
 	{
-
 		ProductVM productVM = new()
 		{
 			Product = new(),
@@ -50,31 +49,56 @@ namespace BulkyWed.Areas.Admin.Controllers;
 
 		if (id == null || id == 0)
 		{
-
 			return View(productVM);
 		}
 		else
 		{
-		
+			productVM.Product = _unitOfWork.Product.GetFirstOrDefault(i => i.Id == id);
+			return View(productVM);
+
 		}
-
-
-		return View(productVM);
 	}
 	//POST
 	[HttpPost]
 	[ValidateAntiForgeryToken]
-	public IActionResult Upsert(CoverType obj)
+	public IActionResult Upsert(ProductVM obj, IFormFile file)
 	{
 
 		if (ModelState.IsValid)
 		{
-			_unitOfWork.CoverType.Update(obj);
+			string wwwRootPath = _webHostEnvironment.WebRootPath;
+			if(file != null)
+			{
+				string fileName =Guid.NewGuid().ToString() +Path.GetExtension(file.FileName);
+				string productPath =Path.Combine(wwwRootPath, @"images\product");
+
+				using(var fileStream = new FileStream(Path.Combine(productPath,fileName),FileMode.Create))
+				{
+					file.CopyTo(fileStream);
+				}
+				obj.Product.ImageUrl = @"images\product\" + fileName;
+			}
+			_unitOfWork.Product.Add(obj.Product);
 			_unitOfWork.Save();
 			TempData["success"] = "CoverType updated successfully";
 			return RedirectToAction("Index");
 		}
-		return View(obj);
+		else
+		{
+			obj.CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem
+			{
+				Text = i.Name,
+				Value = i.Id.ToString()
+			});
+			obj.CoverTypeList = _unitOfWork.CoverType.GetAll().Select(i => new SelectListItem
+			{
+				Text = i.Name,
+				Value = i.Id.ToString()
+			});
+
+			return View(obj);
+		}
+		
 	}
 	public IActionResult Delete(int? id)
 	{

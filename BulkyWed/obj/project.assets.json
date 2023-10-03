@@ -8797,11 +8797,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\engli\\Source\\Repos\\Bulky\\BulkyWed\\BulkyWed.csproj",
+      "projectUniqueName": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\BulkyWed.csproj",
       "projectName": "BulkyWed",
-      "projectPath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\BulkyWed\\BulkyWed.csproj",
+      "projectPath": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\BulkyWed.csproj",
       "packagesPath": "C:\\Users\\engli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\BulkyWed\\obj\\",
+      "outputPath": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8823,14 +8823,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\engli\\Source\\Repos\\Bulky\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\engli\\source\\repos\\Bulky\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\engli\\source\\repos\\Bulky\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\engli\\Source\\Repos\\Bulky\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\Models\\Models.csproj"
+            "C:\\Users\\engli\\source\\repos\\Bulky\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\engli\\source\\repos\\Bulky\\Models\\Models.csproj"
             },
-            "C:\\Users\\engli\\Source\\Repos\\Bulky\\Utility\\Utility.csproj": {
-              "projectPath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\Utility\\Utility.csproj"
+            "C:\\Users\\engli\\source\\repos\\Bulky\\Utility\\Utility.csproj": {
+              "projectPath": "C:\\Users\\engli\\source\\repos\\Bulky\\Utility\\Utility.csproj"
             }
           }
         }

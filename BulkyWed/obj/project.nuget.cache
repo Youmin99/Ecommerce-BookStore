@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6a0+OzsTBJn6Bc25bgxPZ6Gmns8gu9LPB8x4rhAvYY68lLrrsmy6uPyKfym09n2Tpm2KRvHTsM80NmUyC/+AeA==",
+  "dgSpecHash": "CwEv8AWc4OOMzZ3cguiQE1dizoZhdJ4pwfoJ9gxVTomHhhtVNpfOTZagc42UpI/vsqcrRKh1Ru2kTC/t4zu4eQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\engli\\Source\\Repos\\Bulky\\BulkyWed\\BulkyWed.csproj",
+  "projectFilePath": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\BulkyWed.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\engli\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\engli\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
