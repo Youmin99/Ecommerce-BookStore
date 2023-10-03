@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\acec2a2c-175a-47bf-ae6a-80ffdbc4366f.png",
+      "PackagePath": "staticwebassets\\images\\product\\acec2a2c-175a-47bf-ae6a-80ffdbc4366f.png"
+    },
+    {
+      "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\bc00034b-04ae-4e57-83ed-a933d0cc5739.png",
+      "PackagePath": "staticwebassets\\images\\product\\bc00034b-04ae-4e57-83ed-a933d0cc5739.png"
+    },
+    {
+      "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\cc89c7d9-cdd7-43cc-aa2f-d5eb069d3dcb.png",
+      "PackagePath": "staticwebassets\\images\\product\\cc89c7d9-cdd7-43cc-aa2f-d5eb069d3dcb.png"
+    },
+    {
+      "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\js\\product.js",
+      "PackagePath": "staticwebassets\\js\\product.js"
+    },
+    {
       "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
