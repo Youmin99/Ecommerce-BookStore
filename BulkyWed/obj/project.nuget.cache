@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "soZPj7sTGbQZMZkd5eeVcDiNHWe9hsdlnC5KMDEtjwlQwlyI/otgzOETwuOF3XqbGASxxHbDAC/ChzT3ugLuXQ==",
+  "dgSpecHash": "3p1LMSmU4ksrvs9M2FUMbKLOhohroJe3tCxdg+ourVQoAuBkA22nVOk5okB17ZaVbyFpnyWJjCHtn9ChajCdGQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\BulkyWed.csproj",
   "expectedPackageFiles": [
@@ -81,6 +81,8 @@
     "C:\\Users\\engli\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.0\\microsoft.aspnetcore.mvc.core.2.2.0.nupkg.sha512",
     "C:\\Users\\engli\\.nuget\\packages\\microsoft.aspnetcore.mvc.dataannotations\\2.2.0\\microsoft.aspnetcore.mvc.dataannotations.2.2.0.nupkg.sha512",
     "C:\\Users\\engli\\.nuget\\packages\\microsoft.aspnetcore.mvc.formatters.json\\2.2.0\\microsoft.aspnetcore.mvc.formatters.json.2.2.0.nupkg.sha512",
+    "C:\\Users\\engli\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\engli\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\7.0.11\\microsoft.aspnetcore.mvc.razor.runtimecompilation.7.0.11.nupkg.sha512",
     "C:\\Users\\engli\\.nuget\\packages\\microsoft.aspnetcore.mvc.viewfeatures\\2.2.0\\microsoft.aspnetcore.mvc.viewfeatures.2.2.0.nupkg.sha512",
     "C:\\Users\\engli\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",
     "C:\\Users\\engli\\.nuget\\packages\\microsoft.aspnetcore.responsecaching.abstractions\\2.2.0\\microsoft.aspnetcore.responsecaching.abstractions.2.2.0.nupkg.sha512",

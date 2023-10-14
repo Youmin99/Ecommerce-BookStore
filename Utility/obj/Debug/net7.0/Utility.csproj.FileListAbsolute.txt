@@ -20,3 +20,4 @@ C:\Users\engli\Source\Repos\Bulky\Utility\obj\Debug\net7.0\Utility.dll
 C:\Users\engli\Source\Repos\Bulky\Utility\obj\Debug\net7.0\refint\Utility.dll
 C:\Users\engli\Source\Repos\Bulky\Utility\obj\Debug\net7.0\Utility.pdb
 C:\Users\engli\Source\Repos\Bulky\Utility\obj\Debug\net7.0\ref\Utility.dll
+C:\Users\engli\source\repos\Bulky\Utility\obj\Debug\net7.0\Utility.csproj.AssemblyReference.cache

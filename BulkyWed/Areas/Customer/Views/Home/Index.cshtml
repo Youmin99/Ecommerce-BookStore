@@ -1,35 +1,58 @@
 ﻿@model IEnumerable<Models.Product>
 
+<div class="container-fluid ">
+	<img src="~/Images/book.jpg" class="img-fluid " style=" width:100%; height:600px; border-radius: 20px;" alt="Responsive image">
+</div>
+<div class="pt-5">
+	<div class="text-center text-dark fs-2 fw-medium font-family-Poppins  m-0 px-3 py-2">
+		<h2>BOOK</h2>
+	</div>
+	<div id="component" class="container-fluid py-3">
+		<p class="text-center text-secondary fs-6 fw-medium font-family-Poppins  m-0 px-3 py-2">
+			Order it for you or for your beloved ones
+		</p>
+	</div>
+</div>
+<div class="row pb-3 justify-content-md-center">
 
-<div class="row pb-3">
-	@foreach (var product in Model)
-	{
-		<div class="col-lg-3 col-md-6">
-			<div class="row p-2">
-				<div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
-					<div class="card">
-						<img src="@product.ImageUrl" class="card-img-top rounded" />
+		@foreach (var product in Model)
+		{
+			<div class="col-lg-3 col-md-6">
+				<div class="row p-2 rounded-5">
+				<div class="col-12 p-1 shadow;" style=" border-radius: 20px;">
+						<div class="card">
+							<img src="@product.ImageUrl" class="card-img-top rounded" />
 
-						<div class="card-body">
-							<div class="pl-1">
-								<p class="card-title h5 text-primary">@product.Title</p>
-								<p class="card-title text-info">by <b>@product.Author</b></p>
-							</div>
-							<div class="pl-1">
-								<p>List Price: <strike><b>$@product.ListPrice.ToString("0.00")</b></strike></p>
-							</div>
-							<div class="pl-1">
-								<p>As low as: <b>$@product.Price100.ToString("0.00")</b></p>
+							<div class="card-body">
+								<div class="pl-1">
+								<p class=" text-center text-dark fs-6 fw-bold font-family-Poppins card-title h5 ">@product.Title</p>
+									<p class="card-title text-info">by <b>@product.Author</b></p>
+								</div>
+								<div class="pl-1">
+									<p>List Price: <strike><b>$@product.ListPrice.ToString("0.00")</b></strike></p>
+								</div>
+								<div class="pl-1">
+									<p>As low as: <b>$@product.Price100.ToString("0.00")</b></p>
+								</div>
 							</div>
 						</div>
+					<div class="row p-2" >
+						<div class="bg-light col-2 text-center btn"><i class="bi bi-plus-circle-fill"></i></div>
+						<div class="bg-light col-2 text-center" >4</div>
+						<div class="bg-light col-2 text-center btn"><i class="bi bi-plus-circle-fill"></i></div>
+						<div class=" col-2" ></div>
+						<div class=" col-4" >
+							<a asp-controller="Home" asp-action="Detail" class="btn form-control" style="border-radius: 20px; background-color:#65C26F;" asp-route-id="@product.Id">
+									Detail
+								</a>
+						</div>
 					</div>
-					<div>
-						<a asp-action="Details" class="btn btn-primary form-control" asp-route-id="@product.Id">
-							Details
-						</a>
-					</div>
+
+				</div>
+
 				</div>
 			</div>
-		</div>
 	}
+
+
 </div>

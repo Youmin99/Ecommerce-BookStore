@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/UdOHk/3evyiAzWlA1znBa2tbedlrLk5hOxCXLMbINE=",
+  "Hash": "b2Q3vBQHLmZRQMclN0x6lLT3+Y73Bad2uOxmQZxzXes=",
   "Source": "BulkyWed",
   "BasePath": "_content/BulkyWed",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\book.jpg",
+      "SourceId": "BulkyWed",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\",
+      "BasePath": "_content/BulkyWed",
+      "RelativePath": "images/book.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\book.jpg"
     },
     {
       "Identity": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\acec2a2c-175a-47bf-ae6a-80ffdbc4366f.png",

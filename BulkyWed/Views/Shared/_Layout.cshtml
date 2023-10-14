@@ -3,25 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BulkyWed</title>
+    <title>@ViewData["Title"] - bookstore</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BulkyWed.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" />
 </head>
 <body>
     <header>
-        <div class="d-flex justify-content-between bg-gray p-2 px-5" style="background-color:#f0f0f0">
-            <h2 class="navbar-brand text-dark " asp-area="" asp-controller="Home" asp-action="Index">Pet Shop</h2>
-            <nav class="d-flex justify-content-between pr-5 m">
-                <a class=nav-link asp-area="Customer" asp-controller="Cart" asp-action="Index">
-                    <i class="bi bi-cart"></i>
-                </a>
-                <a class=nav-link asp-area="Customer" asp-controller="Cart" asp-action="Index">
-                    login
-                </a>
-            </nav>
-        </div>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BulkyWed</a>
@@ -47,6 +38,14 @@
                         </li>
                     </ul>
                 </div>
+                <div>
+                    <a class=nav-link asp-area="Customer" asp-controller="Cart" asp-action="Index">
+                        <i class="bi bi-cart"></i>
+                    </a>
+                </div>
+                <div>
+                    <partial name="_LoginPartial" />
+                </div>
             </div>
         </nav>
     </header>
@@ -56,10 +55,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="pt-6 border-top footer text-muted" >
         <div class="container">
-            &copy; 2023 - BulkyWed - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+            &copy; 2023 - book - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div> 
+        
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -68,6 +68,7 @@
     <script src="https://cdn.tiny.cloud/1/cpohqh39e5jwwg8l0dn20exemdquvog8zneyribxbdrirdn8/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -57,10 +57,10 @@ namespace BulkyWed.Areas.Admin.Controllers;
                 return NotFound();
             }
             var categoryFromDb = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
-            //var categoryFromDbFirst = _db.Categories.FirstOrDefault(u=>u.Id==id);
-            //var categoryFromDbSingle = _db.Categories.SingleOrDefault(u => u.Id == id);
+		//var categoryFromDbFirst = _db.Categories.FirstOrDefault(u=>u.Id==id);
+		//var categoryFromDbSingle = _db.Categories.SingleOrDefault(u => u.Id == id);
 
-            if (categoryFromDb == null)
+			if (categoryFromDb == null)
             {
                 return NotFound();
             }
