@@ -1,3 +1,112 @@
+/* _content/BulkyWed/Areas/Customer/Views/Home/Detail.cshtml.rz.scp.css */
+.cardbox[b-i6ecbfokcb] {
+    height:500px;
+    width:1000px;
+
+}
+.imgStyle[b-i6ecbfokcb] {
+    height: 400px;
+    width: 500px;
+}
+
+.big-button[b-i6ecbfokcb] {
+    width: 350px;
+    height: 42px;
+    background-color: var(--green);
+    border-radius: 4px;
+}
+
+    .big-button .label[b-i6ecbfokcb] {
+        position: relative;
+        width: 160px;
+        height: 24px;
+        top: 8px;
+        left: 99px;
+    }
+
+    .big-button .cart[b-i6ecbfokcb] {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 0;
+        left: 0;
+    }
+
+    .big-button .text-wrapper[b-i6ecbfokcb] {
+        position: absolute;
+        width: 124px;
+        height: 23px;
+        top: 1px;
+        left: 34px;
+        font-family: "Roboto-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+/* _content/BulkyWed/Areas/Identity/Pages/Account/Login.cshtml.rz.scp.css */
+
+.idStyle[b-4jfsreb8vk] {
+    background-color: #fff6f3;
+    border-radius: 20px;
+}
+
+#login-submit[b-4jfsreb8vk] {
+    height: 59px;
+    width: 255px;
+    border-radius: 20px;
+    background-color: #84C7AE;
+}
+#input[b-4jfsreb8vk] {
+    width: 400px;
+    border-radius: 20px;
+}
+
+.lgbox[b-4jfsreb8vk] {
+    border-radius: 20px;
+    height: 550px;
+    width: 500px;
+    background-color: #F6FBF9;
+    box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.form-floating > label[b-4jfsreb8vk] {
+
+    left: 20px;
+
+}
+/* _content/BulkyWed/Areas/Identity/Pages/Account/Register.cshtml.rz.scp.css */
+
+.idStyle[b-3fwoltbfpd] {
+    background-color: #fff6f3;
+    border-radius: 20px;
+}
+
+#registerSubmit[b-3fwoltbfpd] {
+    height: 59px;
+    width: 255px;
+    border-radius: 20px;
+    background-color: #84C7AE;
+}
+
+#input[b-3fwoltbfpd] {
+    width: 400px;
+    border-radius: 20px;
+}
+
+.lgbox[b-3fwoltbfpd] {
+    border-radius: 20px;
+    height: 650px;
+    width: 700px;
+    background-color: #F6FBF9;
+    box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.form-floating > label[b-3fwoltbfpd] {
+    left: 20px;
+}
 /* _content/BulkyWed/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

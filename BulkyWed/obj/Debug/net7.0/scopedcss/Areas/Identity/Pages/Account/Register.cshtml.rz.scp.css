@@ -1,0 +1,29 @@
+
+.idStyle[b-3fwoltbfpd] {
+    background-color: #fff6f3;
+    border-radius: 20px;
+}
+
+#registerSubmit[b-3fwoltbfpd] {
+    height: 59px;
+    width: 255px;
+    border-radius: 20px;
+    background-color: #84C7AE;
+}
+
+#input[b-3fwoltbfpd] {
+    width: 400px;
+    border-radius: 20px;
+}
+
+.lgbox[b-3fwoltbfpd] {
+    border-radius: 20px;
+    height: 650px;
+    width: 700px;
+    background-color: #F6FBF9;
+    box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.form-floating > label[b-3fwoltbfpd] {
+    left: 20px;
+}

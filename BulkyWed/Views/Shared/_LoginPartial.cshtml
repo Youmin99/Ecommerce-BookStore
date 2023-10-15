@@ -2,8 +2,8 @@
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-
-<ul class="d-flex flex-row navbar-nav ">
+@* d-flex flex-row *@
+<ul class=" navbar-nav ">
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">

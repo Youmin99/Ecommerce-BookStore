@@ -691,3 +691,6 @@ C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\System.Xml.XPat
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\WindowsBase.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Customer\Views\Home\Detail.cshtml.rz.scp.css
+C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Identity\Pages\Account\Register.cshtml.rz.scp.css
+C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Identity\Pages\Account\Login.cshtml.rz.scp.css

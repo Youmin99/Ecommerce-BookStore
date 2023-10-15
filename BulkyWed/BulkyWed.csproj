@@ -14,6 +14,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Areas\Customer\Views\Home\Detail.cshtml.css" />
+    <None Remove="Areas\Identity\Pages\Account\Login.cshtml.css" />
+    <None Remove="Areas\Identity\Pages\Account\Register.cshtml.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\Customer\Views\Home\Detail.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Identity\Pages\Account\Register.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Identity\Pages\Account\Login.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.11" />
@@ -31,10 +52,6 @@
 		<ProjectReference Include="..\Models\Models.csproj" />
 		<ProjectReference Include="..\DataAccess\DataAccess.csproj" />
 		<ProjectReference Include="..\Utility\Utility.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Areas\Identity\Data\" />
 	</ItemGroup>
 
 </Project>
