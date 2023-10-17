@@ -3,75 +3,79 @@
 <form method="post">
     <input hidden asp-for="Id" />
 
-    <div class="card container pt-4">
-
-        <div class="card-header bg-primary text-light ml-0  row ">
-            <div class="col-12 col-md-6">
-                <h1 class="text-white-50">@Model.Title</h1>
-                <p class="text-warning">by @Model.Author</p>
+    <div class="col-10  container pt-4" style=" border-radius: 20px;  height:500px;">
+        <div class="d-flex flex-row">
+            <div class="h-100 w-40">
+                <img src="@Model.ImageUrl" style=" border-radius: 20px; " />
             </div>
-            <div class="col-12 col-md-6 text-end pt-4">
-                <span class="badge bg-info pt-2" style="height:30px;">@Model.CoverType.Name</span>
-                <span class="badge bg-warning pt-2" style="height:30px;">@Model.Category.Name</span>
-            </div>
-        </div>
-        <div class="card-body row container">
-            <div class="container rounded p-2">
-                <div class="row">
-                    <div class="col-8 col-lg-8">
-                        <div class="row pl-2">
-                            <h5 class="text-muted">ISBN : @Model.ISBN</h5>
-                        </div>
-                        <div class="row pl-2">
-                            <h5 class="text-muted pb-2">List Price: <strike>@Model.ListPrice.ToString("c")</strike></h5>
-                        </div>
-                        <div class="row text-center pl-2">
-                            <div class="p-1 col-2 bg-secondary border-bottom">
-                                <div>Quantity</div>
+            <div>
+                <div class="bg text-light ml-0  row ">
+                    <div class="col-12 col-md-6">
+                        <h1 class="text-white-50">@Model.Title</h1>
+                        <p class="text-warning">by @Model.Author</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-end pt-4">
+                        <span class="badge bg-info pt-2" style="height:30px;">@Model.CoverType.Name</span>
+                        <span class="badge bg-warning pt-2" style="height:30px;">@Model.Category.Name</span>
+                    </div>
+                </div>
+                <div class="card-body row container">
+                    <div class="container rounded p-2">
+                            <div class="col-8 col-lg-8">
+                                <div class="row pl-2">
+                                    <h5 class="text-muted">ISBN : @Model.ISBN</h5>
+                                </div>
+                                <div class="row pl-2">
+                                    <h5 class="text-muted pb-2">List Price: <strike>@Model.ListPrice.ToString("c")</strike></h5>
+                                </div>
+                                <div class="row text-center pl-2">
+                                    <div class="p-1 col-2 bg-secondary border-bottom">
+                                        <div>Quantity</div>
+                                    </div>
+                                    <div class="p-1 col-2 bg-secondary border-bottom">
+                                        <div>1-50</div>
+                                    </div>
+                                    <div class="p-1 col-2 bg-secondary border-bottom">
+                                        <div>51-100</div>
+                                    </div>
+                                    <div class="p-1 col-2 bg-secondary border-bottom">
+                                        <div>100+</div>
+                                    </div>
+                                </div>
+                                <div class="row text-center pl-2" style="color:maroon; font-weight:bold">
+                                    <div class="p-1 col-2 bg-secondary">
+                                        <div>Price</div>
+                                    </div>
+                                    <div class="p-1 col-2 bg-secondary">
+                                        <div>@Model.Price.ToString("c")</div>
+                                    </div>
+                                    <div class="p-1 col-2 bg-secondary">
+                                        <div>@Model.Price50.ToString("c")</div>
+                                    </div>
+                                    <div class="p-1 col-2 bg-secondary">
+                                        <div>@Model.Price100.ToString("c")</div>
+                                    </div>
+                                </div>
+                                <div class="row pl-2">
+                                    <p class="text-secondary">@Html.Raw(Model.Description)</p>
+                                </div>
+                                <div class="row pl-2">
+                                    <div class="col-2 text-primary"><h4>Count</h4></div>
+                                </div>
                             </div>
-                            <div class="p-1 col-2 bg-secondary border-bottom">
-                                <div>1-50</div>
-                            </div>
-                            <div class="p-1 col-2 bg-secondary border-bottom">
-                                <div>51-100</div>
-                            </div>
-                            <div class="p-1 col-2 bg-secondary border-bottom">
-                                <div>100+</div>
-                            </div>
-                        </div>
-                        <div class="row text-center pl-2" style="color:maroon; font-weight:bold">
-                            <div class="p-1 col-2 bg-secondary">
-                                <div>Price</div>
-                            </div>
-                            <div class="p-1 col-2 bg-secondary">
-                                <div>@Model.Price.ToString("c")</div>
-                            </div>
-                            <div class="p-1 col-2 bg-secondary">
-                                <div>@Model.Price50.ToString("c")</div>
-                            </div>
-                            <div class="p-1 col-2 bg-secondary">
-                                <div>@Model.Price100.ToString("c")</div>
-                            </div>
-                        </div>
-                        <div class="row pl-2">
-                            <p class="text-secondary">@Html.Raw(Model.Description)</p>
-                        </div>
-                        <div class="row pl-2">
-                            <div class="col-2 text-primary"><h4>Count</h4></div>
                         </div>
                     </div>
-
                 </div>
-            </div>
-        </div>
-        <div class="card-footer">
-            <div class="row">
-                <div class="col-12 col-md-6 pb-1">
-                    <a class="btn btn-success form-control " style="height:50px;" asp-action="Index">Back to Home</a>
-                </div>
-                <div class="col-12 col-md-6 pb-1">
-                    <button type="submit" value="Add to Cart" class="btn btn-primary form-control" style="height:50px;">Add to Cart</button>
-                </div>
+                    <div class="">
+                        <div class="row">
+                            <div class="col-12 col-md-6 pb-1">
+                                <a class="btn btn-success form-control " style="height:50px;" asp-action="Index">Back to Home</a>
+                            </div>
+                            <div class="col-12 col-md-6 pb-1">
+                                <button type="submit" value="Add to Cart" class="btn btn-primary form-control" style="height:50px;">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

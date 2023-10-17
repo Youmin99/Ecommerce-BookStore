@@ -61,61 +61,46 @@ namespace BulkyWed.Areas.Admin.Controllers;
 	//POST
 	[HttpPost]
 	[ValidateAntiForgeryToken]
-	public IActionResult Upsert(ProductVM obj, IFormFile file)
+	public IActionResult Upsert(ProductVM obj, IFormFile? file)
 	{
-		if (ModelState.IsValid)
-		{
-			string wwwRootPath = _webHostEnvironment.WebRootPath;
-			if(file != null)
-			{
-				string fileName =Guid.NewGuid().ToString() +Path.GetExtension(file.FileName);
-				string productPath =Path.Combine(wwwRootPath, @"images\product");
+ if (ModelState.IsValid)
+        {
+            string wwwRootPath = _webHostEnvironment.WebRootPath;
+            if (file != null)
+            {
+                string fileName = Guid.NewGuid().ToString();
+                var uploads = Path.Combine(wwwRootPath, @"images\product");
+                var extension = Path.GetExtension(file.FileName);
 
-				if(!string.IsNullOrEmpty(obj.Product.ImageUrl))
-				{
-					var oldImagePath = Path.Combine(wwwRootPath, obj.Product.ImageUrl.TrimStart('\\'));
-					if(System.IO.File.Exists(oldImagePath))
-					{
-						System.IO.File.Delete(oldImagePath);
-					}
-				}
+                if (obj.Product.ImageUrl != null)
+                {
+                    var oldImagePath = Path.Combine(wwwRootPath, obj.Product.ImageUrl.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                }
 
-				using(var fileStream = new FileStream(Path.Combine(productPath,fileName),FileMode.Create))
-				{
-					file.CopyTo(fileStream);
-				}
+                using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                {
+                    file.CopyTo(fileStreams);
+                }
+                obj.Product.ImageUrl = @"\images\product\" + fileName + extension;
 
-				obj.Product.ImageUrl = @"images\product\" + fileName;
-			}
-
-			if(obj.Product.Id == 0 )
-			{
-				_unitOfWork.Product.Add(obj.Product);
-			}
-			else
-			{
-				_unitOfWork.Product.Update(obj.Product);
-			}
-			
-			_unitOfWork.Save();
-			TempData["success"] = "CoverType updated successfully";
-			return RedirectToAction("Index");
-		}
-		else
-		{
-			obj.CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem
-			{
-				Text = i.Name,
-				Value = i.Id.ToString()
-			});
-			obj.CoverTypeList = _unitOfWork.CoverType.GetAll().Select(i => new SelectListItem
-			{
-				Text = i.Name,
-				Value = i.Id.ToString()
-			});
-
-			return View(obj);
-		}
+            }
+            if (obj.Product.Id == 0)
+            {
+                _unitOfWork.Product.Add(obj.Product);
+            }
+            else
+            {
+                _unitOfWork.Product.Update(obj.Product);
+            }
+            _unitOfWork.Save();
+            TempData["success"] = "Product created successfully";
+            return RedirectToAction("Index");
+        }
+        return View(obj);
 		
 	}
 	public IActionResult Delete(int? id)
