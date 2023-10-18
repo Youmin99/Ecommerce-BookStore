@@ -35,6 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Customer\Views\Cart\Index.cshtml" />
+    <None Include="Areas\Customer\Views\Cart\OrderConfirmation.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.11" />
@@ -52,10 +57,6 @@
 		<ProjectReference Include="..\Models\Models.csproj" />
 		<ProjectReference Include="..\DataAccess\DataAccess.csproj" />
 		<ProjectReference Include="..\Utility\Utility.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="wwwroot\images\products\" />
 	</ItemGroup>
 
 </Project>

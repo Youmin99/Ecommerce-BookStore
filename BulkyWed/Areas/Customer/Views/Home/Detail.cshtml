@@ -1,17 +1,17 @@
 ﻿@model Product
 
-<form method="post">
+<form method="post" class="mt-6 pt-4">
     <input hidden asp-for="Id" />
 
-    <div class="col-10  container pt-4" style=" border-radius: 20px;  height:500px;">
-        <div class="d-flex flex-row">
-            <div class="h-100 w-40">
-                <img src="@Model.ImageUrl" style=" border-radius: 20px; " />
+    <div class="col-lg-10  container pt-4 " style="border:solid; border-radius: 20px;  height:500px;">
+        <div id="box" class="justify-content-between">
+            <div class="h-100 col-6 w-40">
+                <img  src="@Model.ImageUrl" id="img"/>
             </div>
-            <div>
-                <div class="bg text-light ml-0  row ">
+            <div class="h-100 w-60 col-6  ml-3  row">
+                <div class="bg text ml-0 row">
                     <div class="col-12 col-md-6">
-                        <h1 class="text-white-50">@Model.Title</h1>
+                        <h1 class="text">@Model.Title</h1>
                         <p class="text-warning">by @Model.Author</p>
                     </div>
                     <div class="col-12 col-md-6 text-end pt-4">
@@ -19,9 +19,9 @@
                         <span class="badge bg-warning pt-2" style="height:30px;">@Model.Category.Name</span>
                     </div>
                 </div>
-                <div class="card-body row container">
+                <div class=" row col-12">
                     <div class="container rounded p-2">
-                            <div class="col-8 col-lg-8">
+                            <div class="col-10 col-lg-8">
                                 <div class="row pl-2">
                                     <h5 class="text-muted">ISBN : @Model.ISBN</h5>
                                 </div>
@@ -63,19 +63,16 @@
                                     <div class="col-2 text-primary"><h4>Count</h4></div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
-                    <div class="">
-                        <div class="row">
-                            <div class="col-12 col-md-6 pb-1">
+                   <div class="row col-12">
+                       <div class="col-6 col-md-6 pb-1" >
                                 <a class="btn btn-success form-control " style="height:50px;" asp-action="Index">Back to Home</a>
-                            </div>
-                            <div class="col-12 col-md-6 pb-1">
+                       </div>
+                            <div class="col-6 col-md-6 pb-1">
                                 <button type="submit" value="Add to Cart" class="btn btn-primary form-control" style="height:50px;">Add to Cart</button>
                             </div>
-                        </div>
-                    </div>
+                   </div>
             </div>
         </div>
     </div>

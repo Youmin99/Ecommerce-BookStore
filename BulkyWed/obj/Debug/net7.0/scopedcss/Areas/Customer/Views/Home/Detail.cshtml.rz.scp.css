@@ -1,47 +1,33 @@
-.cardbox[b-i6ecbfokcb] {
-    height:500px;
-    width:1000px;
+#box[b-i6ecbfokcb] {
+    display: flex;
+    flex-direction: row;
 
 }
-.imgStyle[b-i6ecbfokcb] {
-    height: 400px;
-    width: 500px;
+
+@media (max-width:700px) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+
+    #img[b-i6ecbfokcb] {
+        border-radius: 20px;
+        height: 80%;
+        width: 100%;
+    }
+    #box[b-i6ecbfokcb] {
+        display: block;
+    }
 }
 
-.big-button[b-i6ecbfokcb] {
-    width: 350px;
-    height: 42px;
-    background-color: var(--green);
-    border-radius: 4px;
+#img[b-i6ecbfokcb] {
+    border-radius:20px; 
+    height:80%; 
+    width:100%;
 }
 
-    .big-button .label[b-i6ecbfokcb] {
-        position: relative;
-        width: 160px;
-        height: 24px;
-        top: 8px;
-        left: 99px;
-    }
+#inbox[b-i6ecbfokcb] {
+    height: 100%;
+    width: 60%;
+}
 
-    .big-button .cart[b-i6ecbfokcb] {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        top: 0;
-        left: 0;
-    }
 
-    .big-button .text-wrapper[b-i6ecbfokcb] {
-        position: absolute;
-        width: 124px;
-        height: 23px;
-        top: 1px;
-        left: 34px;
-        font-family: "Roboto-Regular", Helvetica;
-        font-weight: 400;
-        color: #ffffff;
-        font-size: 20px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-    }
+
