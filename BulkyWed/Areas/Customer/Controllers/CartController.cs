@@ -25,8 +25,7 @@ namespace BulkyWed.Areas.Customer.Controllers
 
             ShoppingCartVM = new ShoppingCartVM()
             {
-                ListCart = _unitOfWork.ShoppingCart.GetAll(
-                includeProperties: "Product")
+                ListCart = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == claim.Value)
             };
             foreach (var cart in ShoppingCartVM.ListCart)
             {

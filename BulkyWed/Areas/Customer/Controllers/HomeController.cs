@@ -5,6 +5,7 @@ using DataAccess.Repository.IRepository;
 using Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using Utility;
 
 namespace BulkyWed.Areas.Customer.Controllers;
 
@@ -36,34 +37,30 @@ namespace BulkyWed.Areas.Customer.Controllers;
             Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == Id, includeProperties: "Category,CoverType"),
         };
 
-        var Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == Id, includeProperties: "Category,CoverType");
-
-
-		return View(Product);
+		return View(cartObj);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
     [Authorize]
-    public IActionResult Detail(Product shoppingCart)
+    public IActionResult Detail(ShoppingCart shoppingCart)
     {
-        //var claimsIdentity = (ClaimsIdentity)User.Identity;
-        //var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-        //shoppingCart.ApplicationUserId = claim.Value;
+        var claimsIdentity = (ClaimsIdentity)User.Identity; 
+        var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+        shoppingCart.ApplicationUserId = claim.Value;
 
-        //ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(
-        //    u => u.ApplicationUserId == claim.Value && u.ProductId == shoppingCart.ProductId);
+        ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(
+            u => u.ApplicationUserId == claim.Value && u.ProductId == shoppingCart.ProductId);
 
 
-        //if (cartFromDb == null)
-        //{
-
-        //    _unitOfWork.Product.Add(shoppingCart);
-        //}
-        //else
-        //{
-        //    _unitOfWork.Product.IncrementCount(cartFromDb, shoppingCart.Count);
-        //}
+        if (cartFromDb == null)
+        {
+            _unitOfWork.ShoppingCart.Add(shoppingCart);
+        }
+        else
+        {
+            _unitOfWork.ShoppingCart.IncrementCount(cartFromDb, shoppingCart.Count);
+        }
 
         _unitOfWork.Save();
 
