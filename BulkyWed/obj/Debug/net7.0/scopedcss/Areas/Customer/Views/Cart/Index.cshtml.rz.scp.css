@@ -19,9 +19,12 @@
     width:100%;
 }
 
-#inbox[b-4cex7li2xp] {
-    height: 100%;
-    width: 60%;
+#icon[b-4cex7li2xp] {
+    display:flex;
+    align-content:center;
+    justify-content:center;
+    width:20px;
+    height:20px;
 }
 
 
