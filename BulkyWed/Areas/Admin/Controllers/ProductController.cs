@@ -55,7 +55,6 @@ namespace BulkyWed.Areas.Admin.Controllers;
 			productVM.Product = _unitOfWork.Product.GetFirstOrDefault(i => i.Id == id);
 			return View(productVM);
 
-
 		}
 	}
 	//POST
@@ -63,44 +62,44 @@ namespace BulkyWed.Areas.Admin.Controllers;
 	[ValidateAntiForgeryToken]
 	public IActionResult Upsert(ProductVM obj, IFormFile? file)
 	{
- if (ModelState.IsValid)
-        {
-            string wwwRootPath = _webHostEnvironment.WebRootPath;
-            if (file != null)
-            {
-                string fileName = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(wwwRootPath, @"images\product");
-                var extension = Path.GetExtension(file.FileName);
+	 if (ModelState.IsValid)
+			{
+				string wwwRootPath = _webHostEnvironment.WebRootPath;
+				if (file != null)
+				{
+					string fileName = Guid.NewGuid().ToString();
+					var uploads = Path.Combine(wwwRootPath, @"images\product");
+					var extension = Path.GetExtension(file.FileName);
 
-                if (obj.Product.ImageUrl != null)
-                {
-                    var oldImagePath = Path.Combine(wwwRootPath, obj.Product.ImageUrl.TrimStart('\\'));
-                    if (System.IO.File.Exists(oldImagePath))
-                    {
-                        System.IO.File.Delete(oldImagePath);
-                    }
-                }
+					if (obj.Product.ImageUrl != null)
+					{
+						var oldImagePath = Path.Combine(wwwRootPath, obj.Product.ImageUrl.TrimStart('\\'));
+						if (System.IO.File.Exists(oldImagePath))
+						{
+							System.IO.File.Delete(oldImagePath);
+						}
+					}
 
-                using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
-                {
-                    file.CopyTo(fileStreams);
-                }
-                obj.Product.ImageUrl = @"\images\product\" + fileName + extension;
+					using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+					{
+						file.CopyTo(fileStreams);
+					}
+					obj.Product.ImageUrl = @"\images\product\" + fileName + extension;
 
-            }
-            if (obj.Product.Id == 0)
-            {
-                _unitOfWork.Product.Add(obj.Product);
-            }
-            else
-            {
-                _unitOfWork.Product.Update(obj.Product);
-            }
-            _unitOfWork.Save();
-            TempData["success"] = "Product created successfully";
-            return RedirectToAction("Index");
-        }
-        return View(obj);
+				}
+				if (obj.Product.Id == 0)
+				{
+					_unitOfWork.Product.Add(obj.Product);
+				}
+				else
+				{
+					_unitOfWork.Product.Update(obj.Product);
+				}
+				_unitOfWork.Save();
+				TempData["success"] = "Product created successfully";
+				return RedirectToAction("Index");
+			}
+			return View(obj);
 		
 	}
 	public IActionResult Delete(int? id)

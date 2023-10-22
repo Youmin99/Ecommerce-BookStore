@@ -28,13 +28,13 @@ namespace BulkyWed.Areas.Customer.Controllers;
         return View(productList);
     }
 
-    public IActionResult Detail(int Id)
+    public IActionResult Detail(int productId)
     {
         ShoppingCart cartObj = new()
         {
             Count = 1,
-            ProductId = Id,
-            Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == Id, includeProperties: "Category,CoverType"),
+            ProductId = productId,
+            Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == productId, includeProperties: "Category,CoverType"),
         };
 
 		return View(cartObj);
@@ -45,27 +45,25 @@ namespace BulkyWed.Areas.Customer.Controllers;
     [Authorize]
     public IActionResult Detail(ShoppingCart shoppingCart)
     {
-        var claimsIdentity = (ClaimsIdentity)User.Identity; 
-        var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-        shoppingCart.ApplicationUserId = claim.Value;
+		var claimsIdentity = (ClaimsIdentity)User.Identity;
+		var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+		shoppingCart.ApplicationUserId = claim.Value;
 
-        ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(
-            u => u.ApplicationUserId == claim.Value && u.ProductId == shoppingCart.ProductId);
+		ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(
+			u => u.ApplicationUserId == claim.Value && u.ProductId == shoppingCart.ProductId);
 
+		if (cartFromDb == null)
+		{
+			_unitOfWork.ShoppingCart.Add(shoppingCart);
+		}
+		else
+		{
+			_unitOfWork.ShoppingCart.IncrementCount(cartFromDb, shoppingCart.Count);
+		}
+		_unitOfWork.Save();
 
-        if (cartFromDb == null)
-        {
-            _unitOfWork.ShoppingCart.Add(shoppingCart);
-        }
-        else
-        {
-            _unitOfWork.ShoppingCart.IncrementCount(cartFromDb, shoppingCart.Count);
-        }
-
-        _unitOfWork.Save();
-
-        return RedirectToAction(nameof(Index));
-    }
+		return RedirectToAction(nameof(Index));
+	}
 
     public IActionResult Privacy()
         {
