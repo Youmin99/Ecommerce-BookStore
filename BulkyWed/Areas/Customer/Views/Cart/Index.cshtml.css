@@ -1,0 +1,28 @@
+#box {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:700px) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+
+    #box {
+        display: block;
+        width:100%;
+    }
+}
+
+#img {
+    border-radius:20px; 
+    height:80%; 
+    width:100%;
+}
+
+#inbox {
+    height: 100%;
+    width: 60%;
+}
+
+
+

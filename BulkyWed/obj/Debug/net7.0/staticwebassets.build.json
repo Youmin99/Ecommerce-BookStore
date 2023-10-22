@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/j/nLy6DkiS84hQk2Fumg4dL7hyiywRWEZk/cmKIgsI=",
+  "Hash": "L5h9Rm7K0cp8GduunrxK3mFJfvnQuVFKQHJ/Lsidg4s=",
   "Source": "BulkyWed",
   "BasePath": "_content/BulkyWed",
   "Mode": "Default",
@@ -1137,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product\\92ef0aa2-1a53-471f-9fc7-e5f01da997ec.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\a88c219a-afec-4034-93be-d420a2fd0e53.png",
+      "SourceId": "BulkyWed",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\",
+      "BasePath": "_content/BulkyWed",
+      "RelativePath": "images/product/a88c219a-afec-4034-93be-d420a2fd0e53.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\a88c219a-afec-4034-93be-d420a2fd0e53.png"
     },
     {
       "Identity": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\cba82768-72b8-4d2e-bbbe-96b377b4043f.jpg",

@@ -14,12 +14,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Areas\Customer\Views\Cart\Index.cshtml.css" />
     <None Remove="Areas\Customer\Views\Home\Detail.cshtml.css" />
     <None Remove="Areas\Identity\Pages\Account\Login.cshtml.css" />
     <None Remove="Areas\Identity\Pages\Account\Register.cshtml.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Areas\Customer\Views\Cart\Index.cshtml.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="Areas\Customer\Views\Home\Detail.cshtml.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

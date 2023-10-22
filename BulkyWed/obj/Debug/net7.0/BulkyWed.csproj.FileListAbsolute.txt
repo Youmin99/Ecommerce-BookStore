@@ -694,3 +694,4 @@ C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\Microsoft.AspNetCore
 C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Customer\Views\Home\Detail.cshtml.rz.scp.css
 C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Identity\Pages\Account\Register.cshtml.rz.scp.css
 C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Identity\Pages\Account\Login.cshtml.rz.scp.css
+C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Customer\Views\Cart\Index.cshtml.rz.scp.css
