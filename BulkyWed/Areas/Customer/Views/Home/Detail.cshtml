@@ -3,78 +3,52 @@
 <form method="post"  class="mt-6 pt-4">
     <input hidden asp-for="ProductId" />
 
-    <div class="col-lg-10  container pt-4 " style="border:solid; border-radius: 20px;  height:500px;">
-        <div id="box" class="justify-content-between">
-            <div class="h-100 col-6 w-40">
+    <div class="col-lg-12 col-xl-10  container pt-4 " id="obox">
+        <div id="box" class="">
+            <div class=" d-flex justify-content-center px-0 col-12 col-lg-6 ">
                 <img src="@Model.Product.ImageUrl" id="img" />
             </div>
-            <div class="h-100 w-60 col-6  ml-3  row">
+            <div class=" col-12 col-lg-6 row" id="inbox">
                 <div class="bg text ml-0 row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-6 col-lg-6">
                         <h1 class="text">@Model.Product.Title</h1>
                         <p class="text-warning">by @Model.Product.Author</p>
                     </div>
-                    <div class="col-12 col-md-6 text-end pt-4">
+                    <div class="col-6 col-lg-6 pt-2 text-end ">
                         <span class="badge bg-info pt-2" style="height:30px;">@Model.Product.CoverType.Name</span>
                         <span class="badge bg-warning pt-2" style="height:30px;">@Model.Product.Category.Name</span>
+                        <div class="row pl-2 pt-2">
+                            <h5 class="text-muted">ISBN : @Model.Product.ISBN</h5>
+                        </div>
                     </div>
                 </div>
-                <div class=" row col-12">
-                    <div class="container rounded p-2">
-                            <div class="col-10 col-lg-8">
+                    <div class=" row col-12 col-lg-12">
+                               
                                 <div class="row pl-2">
-                                <h5 class="text-muted">ISBN : @Model.Product.ISBN</h5>
+                                <h5 class="text pb-2">List Price: <strike>@Model.Product.ListPrice.ToString("c")</strike></h5>
                                 </div>
-                                <div class="row pl-2">
-                                <h5 class="text-muted pb-2">List Price: <strike>@Model.Product.ListPrice.ToString("c")</strike></h5>
-                                </div>
-                                <div class="row text-center pl-2">
-                                    <div class="p-1 col-2 bg-secondary border-bottom">
-                                        <div>Quantity</div>
-                                    </div>
-                                    <div class="p-1 col-2 bg-secondary border-bottom">
-                                        <div>1-50</div>
-                                    </div>
-                                    <div class="p-1 col-2 bg-secondary border-bottom">
-                                        <div>51-100</div>
-                                    </div>
-                                    <div class="p-1 col-2 bg-secondary border-bottom">
-                                        <div>100+</div>
-                                    </div>
-                                </div>
-                                <div class="row text-center pl-2" style="color:maroon; font-weight:bold">
-                                    <div class="p-1 col-2 bg-secondary">
-                                        <div>Price</div>
-                                    </div>
-                                    <div class="p-1 col-2 bg-secondary">
-                                    <div>@Model.Product.Price.ToString("c")</div>
-                                    </div>
-                                    <div class="p-1 col-2 bg-secondary">
-                                    <div>@Model.Product.Price50.ToString("c")</div>
-                                    </div>
-                                    <div class="p-1 col-2 bg-secondary">
-                                    <div>@Model.Product.Price100.ToString("c")</div>
-                                    </div>
-                                </div>
-                                <div class="row pl-2">
-                                    <p class="text-secondary">@Html.Raw(Model.Product.Description)</p>
-                                </div>
-                                <div class="row pl-2">
+
+                    <div class="row pl-2" style="height:100px;">
+                        <h5>About item</h5>
+                            <p class="text-secondary">@Html.Raw(Model.Product.Description)</p>
+                        </div>
+                                
+                                <div class="row pl-2 pt-4">
                                     <div class="col-2 text-primary "><h4>Count</h4></div>
-                                    <div class="col-3 mx-5 "><input asp-for="Count" class="form-control" /></div>
+                                    <div class="col-4 mx-5 "><input asp-for="Count" class="form-control" /></div>
                                 </div>
-                            </div>
-                    </div>
                 </div>
-                   <div class="row col-12">
-                       <div class="col-6 col-md-6 pb-1" >
-                                <a class="btn btn-success form-control " style="height:50px;" asp-action="Index">Back to Home</a>
-                       </div>
-                            <div class="col-6 col-md-6 pb-1">
-                                <button type="submit" value="Add to Cart" class="btn btn-primary form-control" style="height:50px;">Add to Cart</button>
-                            </div>
+                   <div class="row pt-4 ">
+                    <div class="col-6 col-lg-6 pb-1 ">
+                        <a class="btn text-light bg-black form-control " style="height:50px; padding-top:11px; " asp-action="Index">Back to Home</a>
+                        </div>
+                    <div class="col-6 col-lg-6 pb-1">
+                        <button type="submit" value="Add to Cart" class="btn text-light form-control" style="background-color:#65C26F; height:50px;">Add to Cart</button>
+                        </div>
                    </div>
             </div>
         </div>
+
     </div>
+
 </form>
