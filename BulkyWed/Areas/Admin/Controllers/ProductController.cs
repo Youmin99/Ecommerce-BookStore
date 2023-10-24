@@ -87,6 +87,17 @@ namespace BulkyWed.Areas.Admin.Controllers;
 					obj.Product.ImageUrl = @"\images\product\" + fileName + extension;
 
 				}
+
+				if (obj.Product.Price <= obj.Product.ListPrice)
+				{
+					obj.Product.DiscountPercent = Math.Ceiling(((obj.Product.ListPrice - obj.Product.Price) / obj.Product.ListPrice) * 100);
+					obj.Product.DiscountAmount = ( obj.Product.ListPrice - obj.Product.Price);
+				}
+				else
+				{
+					throw new Exception("Price must be less than ListPrice");
+				}
+
 				if (obj.Product.Id == 0)
 				{
 					_unitOfWork.Product.Add(obj.Product);

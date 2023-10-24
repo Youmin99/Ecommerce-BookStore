@@ -28,9 +28,9 @@ namespace DataAccess.Repository
                 objFromDb.Title = obj.Title;
                 objFromDb.ISBN = obj.ISBN;
                 objFromDb.Price = obj.Price;
-                objFromDb.Price50 = obj.Price50;
+                objFromDb.DiscountPercent = obj.DiscountPercent;
                 objFromDb.ListPrice = obj.ListPrice;
-                objFromDb.Price100 = obj.Price100;
+                objFromDb.DiscountAmount = obj.DiscountAmount;
                 objFromDb.Description = obj.Description;
                 objFromDb.CategoryId = obj.CategoryId;
                 objFromDb.Author = obj.Author;

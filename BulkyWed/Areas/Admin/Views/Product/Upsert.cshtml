@@ -2,8 +2,11 @@
 
 <form method="post" asp-action="Upsert" enctype="multipart/form-data" class="row justify-content-center container">
 	<input asp-for="Product.Id" hidden />
+	<input asp-for="Product.ImageUrl" hidden />
+	<input asp-for="Product.DiscountPercent" value="0"  hidden />
+	<input asp-for="Product.DiscountAmount" value="0" hidden />
 	<div class="border col-9 p-4 mt-4" style="border-radius:20px; box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.2);">
-		<div class="row ">
+		<div class="row">
 			<h2 class="text-primary">
 				@(Model.Product.Id != 0 ? "Update":"Create") Product</ h2 >
 			<hr />
@@ -36,25 +39,15 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="mb-3 col-3">
-				<label asp-for="Product.ListPrice"></label>
-				<input asp-for="Product.ListPrice" class="form-control" />
-				<span asp-validation-for="Product.ListPrice" class="text-danger"></span>
-			</div>
-			<div class="mb-3 col-3">
+			<div class="mb-3 col-6">
 				<label asp-for="Product.Price"></label>
 				<input asp-for="Product.Price" class="form-control" />
 				<span asp-validation-for="Product.Price" class="text-danger"></span>
 			</div>
-			<div class="mb-3 col-3">
-				<label asp-for="Product.Price50"></label>
-				<input asp-for="Product.Price50" class="form-control" />
-				<span asp-validation-for="Product.Price50" class="text-danger"></span>
-			</div>
-			<div class="mb-3 col-3">
-				<label asp-for="Product.Price100"></label>
-				<input asp-for="Product.Price100" class="form-control" />
-				<span asp-validation-for="Product.Price100" class="text-danger"></span>
+			<div class="mb-3 col-6">
+				<label asp-for="Product.ListPrice"></label>
+				<input asp-for="Product.ListPrice" class="form-control" />
+				<span asp-validation-for="Product.ListPrice" class="text-danger"></span>
 			</div>
 		</div>
 		<div class="row">
@@ -65,7 +58,6 @@
 				</select>
 				<span asp-validation-for="Product.CategoryId" class="text-danger"></span>
 			</div>
-
 			<div class="mb-3 col-6">
 				<label asp-for="Product.CoverTypeId"></label>
 				<select asp-for="Product.CoverTypeId" asp-items="@Model.CoverTypeList" class="form-select">
@@ -110,8 +102,22 @@
 			],
 			ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant"))
 		});
+
+		function ValidateInput() {
+			if (document.getElementById("uploadBox").value == "") {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Please upload an Image!',
+				});
+				return false;
+			}
+			return true;
+		}
 	</script>
 	@{
 		<partial name="_ValidationScriptsPartial" />
 	}
 }
+
+
