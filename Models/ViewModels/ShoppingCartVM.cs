@@ -10,6 +10,8 @@ namespace Models.ViewModels
     {
         public IEnumerable<ShoppingCart> ListCart { get; set; }
 		public OrderHeader OrderHeader { get; set; }
+        public double ListPriceTotal { get; set; }
+		public double DiscountTotal { get; set; }
 
 	}
 }
