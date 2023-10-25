@@ -6,6 +6,8 @@ using System.Security.Claims;
 using Models;
 using System.Diagnostics;
 using Utility;
+using Stripe.Checkout;
+using System.Collections.Generic;
 
 namespace BulkyWed.Areas.Customer.Controllers
 {
@@ -64,8 +66,6 @@ namespace BulkyWed.Areas.Customer.Controllers
 			ShoppingCartVM.OrderHeader.State = ShoppingCartVM.OrderHeader.ApplicationUser.State;
 			ShoppingCartVM.OrderHeader.PostalCode = ShoppingCartVM.OrderHeader.ApplicationUser.PostalCode;
 
-
-
 			foreach (var cart in ShoppingCartVM.ListCart)
 			{
 				cart.Price = cart.Product.Price;
@@ -87,9 +87,9 @@ namespace BulkyWed.Areas.Customer.Controllers
 
 			ShoppingCartVM.OrderHeader.PaymentStatus = SD.PaymentStatusPending;
 			ShoppingCartVM.OrderHeader.OrderStatus = SD.StatusPending;
+
 			ShoppingCartVM.OrderHeader.OrderDate = System.DateTime.Now;
 			ShoppingCartVM.OrderHeader.ApplicationUserId = claim.Value;
-
 
 			foreach (var cart in ShoppingCartVM.ListCart)
 			{
@@ -114,10 +114,48 @@ namespace BulkyWed.Areas.Customer.Controllers
 				_unitOfWork.Save();
 			}
 
-			//clear cart
+			var domain = "https://localhost:7263/";
+			var options = new SessionCreateOptions
+			{
+				SuccessUrl = domain + $"customer/cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
+				CancelUrl = domain + $"customer/cart/index",
+				LineItems = new List<SessionLineItemOptions>(),
+				Mode = "payment",
+			};
+
+			foreach (var item in ShoppingCartVM.ListCart)
+			{
+				var sessionLineItem = new SessionLineItemOptions
+				{
+					PriceData = new SessionLineItemPriceDataOptions
+					{
+						UnitAmount = (long)(item.Price * 100),//20.00 -> 2000
+						Currency = "cad",
+						ProductData = new SessionLineItemPriceDataProductDataOptions
+						{
+							Name = item.Product.Title
+						},
+					},
+					Quantity = item.Count,
+				};
+				options.LineItems.Add(sessionLineItem);
+
+			}
+
+			var service = new SessionService();
+			Session session = service.Create(options);
+			_unitOfWork.OrderHeader.UpdateStripePaymentID(ShoppingCartVM.OrderHeader.Id, session.Id, session.PaymentIntentId);
 			_unitOfWork.ShoppingCart.RemoveRange(ShoppingCartVM.ListCart);
 			_unitOfWork.Save();
-			return RedirectToAction("Index", "Home");
+
+			Response.Headers.Add("Location", session.Url);
+			return new StatusCodeResult(303);
+		}
+		public IActionResult OrderConfirmation(int id)
+		{
+			OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id);
+
+			return View(id);
 		}
 
 		public IActionResult Plus(int cartId)
