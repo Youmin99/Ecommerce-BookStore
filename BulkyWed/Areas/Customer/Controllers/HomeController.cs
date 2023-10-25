@@ -21,11 +21,22 @@ namespace BulkyWed.Areas.Customer.Controllers;
         _unitOfWork = unitOfWork;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(string search="", string fillter="")
     {
-        IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+        IEnumerable<Product> productList;
 
-        return View(productList);
+		if (search != "" && search != null)
+		{
+			productList = _unitOfWork.Product.GetAll(includeProperties: @fillter).Where(p=>p.Title.Contains(search));
+		}
+		else
+		{
+			productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+		}
+
+
+
+		return View(productList);
     }
 
     public IActionResult Detail(int productId)

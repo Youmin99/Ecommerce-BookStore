@@ -15,6 +15,18 @@
 </div>
 <div class="row col-lg-12 pb-3 justify-content-md-center">
 	<div class="row  col-lg-11 justify-content-md-center">
+		<div class="col-12 py-3 row justify-content-end">
+			<div class="col-12 col-md-4 ">
+				<form asp-controller="Home" asp-action="Index">
+					<span class="btn-group">
+						<input class="form-control" type="text" name="search" placeholder="search title" />
+						<input class="btn p-1 ml-2" type="submit" value="Search" style=" background-color:#84C7AE;" />
+					</span>
+				</form>
+		    </div>
+		</div>
+    
+		<br />
 
 		@foreach (var product in Model)
 		{
@@ -28,7 +40,7 @@
 										<p class=" text-info">by <b>@product.Author</b></p>
 							        <div class="d-flex justify-content-around">
 										<p><strike><b>$@product.ListPrice.ToString("0.00")</b></strike></p>
-								        <p><b>$@product.Price100.ToString("0.00")</b></p>
+								        <p><b>$@product.Price.ToString("0.00")</b></p>
 									</div>
 						    </div>
 
