@@ -1,45 +1,46 @@
-﻿@model ShoppingCart
+﻿@model Models.ViewModels.ProductDetailVM
+
 
 <form method="post"  class="mt-6 pt-4">
-    <input hidden asp-for="ProductId" />
+    <input hidden asp-for="Cart.ProductId" />
 
     <div class="col-lg-12 col-xl-10  container pt-4 " id="obox">
         <div id="box" class="">
             <div class=" d-flex justify-content-center px-0 col-12 col-lg-6 ">
-                <img src="@Model.Product.ImageUrl" id="img" />
+                <img src="@Model.Cart.Product.ImageUrl" id="img" />
             </div>
             <div class=" col-12 col-lg-6 row" id="inbox">
                 <div class="bg text ml-0 row">
                     <div class="col-6 col-lg-6">
-                        <h1 class="text">@Model.Product.Title</h1>
-                        <p class="text-warning">by @Model.Product.Author</p>
+                        <h1 class="text">@Model.Cart.Product.Title</h1>
+                        <p class="text-warning">by @Model.Cart.Product.Author</p>
                     </div>
                     <div class="col-6 col-lg-6 pt-2 text-end ">
-                        <span class="badge bg-info pt-2" style="height:30px;">@Model.Product.CoverType.Name</span>
-                        <span class="badge bg-warning pt-2" style="height:30px;">@Model.Product.Category.Name</span>
+                        <span class="badge bg-info pt-2" style="height:30px;">@Model.Cart.Product.CoverType.Name</span>
+                        <span class="badge bg-warning pt-2" style="height:30px;">@Model.Cart.Product.Category.Name</span>
                         <div class="row pl-2 pt-2">
-                            <h5 class="text-muted">ISBN : @Model.Product.ISBN</h5>
+                            <h5 class="text-muted">ISBN : @Model.Cart.Product.ISBN</h5>
                         </div>
                     </div>
                 </div>
                 <div class=" row col-12 col-lg-12">
                     <div class ="pb-2 pl-2 ">
                       <div class="  py-0 my-0 d-flex" style="height:20px;">
-                        <h5 class="text text-danger">-@Model.Product.DiscountPercent%</h5>
-                        <h5 class="text px-1 ">@Model.Product.Price.ToString("c")</h5>
+                            <h5 class="text text-danger">-@Model.Cart.Product.DiscountPercent%</h5>
+                            <h5 class="text px-1 ">@Model.Cart.Product.Price.ToString("c")</h5>
                       </div>
-                        <small><small class="text-muted px-2 ">was:<strike>@Model.Product.ListPrice.ToString("c")</strike></small></small>
+                        <small><small class="text-muted px-2 ">was:<strike>@Model.Cart.Product.ListPrice.ToString("c")</strike></small></small>
                     </div>
 
 
                     <div class="row pl-2" style="height:100px;">
                         <h5>About item</h5>
-                        <p class="text-secondary">@Html.Raw(Model.Product.Description)</p>
+                        <p class="text-secondary">@Html.Raw(Model.Cart.Product.Description)</p>
                     </div>
                                 
                     <div class="row pl-2 pt-4">
                         <div class="col-2 text-primary "><h4>Count</h4></div>
-                        <div class="col-4 mx-5 "><input asp-for="Count" class="form-control" /></div>
+                        <div class="col-4 mx-5 "><input asp-for="Cart.Count" class="form-control" /></div>
                     </div>
                 </div>
                    <div class="row pt-4 ">
@@ -48,11 +49,48 @@
                         </div>
                     <div class="col-6 col-lg-6 pb-1">
                         <button type="submit" value="Add to Cart" class="btn text-light form-control" style="background-color:#65C26F; height:50px;">Add to Cart</button>
-                        </div>
+                    </div>
                    </div>
             </div>
         </div>
 
     </div>
+</form>
+<form method="post" class="mt-6 pt-4">
+    <input hidden asp-for="Cart.ProductId" />
+    <div class=" row container justify-content-center my-3  " id="">
+        <div id="cbox" class="col-lg-12 col-xl-8 p-3 row">
+            <div class="col-1 pt-1">review: </div>
+            <div class=" col-10">
+                <input asp-for="Comment.review" class="form-control" />
+                <span asp-validation-for="Comment.review" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+                <button type="submit"  class="btn form-control" style="padding-bottom:5px;"><i class="bi bi-plus-square"></i></button>
+            </div>
+        </div>
+    </div>
+    @foreach (var Comment in Model.Comments)
+    {
+        <div class=" row container justify-content-center my-3  " id="">
+            <div id="cbox" class="col-lg-12 col-xl-7 p-2 row align-content-center">
+                <div class="col-1" style="padding-top:5px;">@Comment.ApplicationUser.Name</div>
+                <div class=" col-10" style="padding-top:7px;">
+                    @Comment.review
+                </div>
+                <div class="col-1 align-content-center justify-content-center d-flex">
+                    <a asp-controller="Home" asp-action="delete" asp-route-commentId="@Comment.Id" class="btn  ">
+                        <i class="bi bi-trash-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
 
 </form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

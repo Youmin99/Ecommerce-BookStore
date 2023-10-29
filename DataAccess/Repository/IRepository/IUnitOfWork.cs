@@ -15,8 +15,11 @@ namespace DataAccess.Repository.IRepository
         IApplicationUserRepository ApplicationUser { get; }
 		IOrderDetailRepository OrderDetail { get; }
 		IOrderHeaderRepository OrderHeader { get; }
+        ICommentRepository Comment { get; }
 
 
-		void Save();
+
+
+        void Save();
     }
 }

@@ -10,6 +10,12 @@
     height: 500px;
 }
 
+#cbox {
+    border-radius: 20px;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display:flex;
+}
+
 #img {
     border-radius: 20px;
     height: 450px;
