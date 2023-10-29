@@ -109,25 +109,30 @@ namespace BulkyWed.Areas.Customer.Controllers;
         }
 
 
-
+    [Authorize]
     public IActionResult delete(int commentId)
     {
+        var claimsIdentity = (ClaimsIdentity)User.Identity;
+        var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+        
         var comment = _unitOfWork.Comment.GetFirstOrDefault(u => u.Id == commentId);
        
+        if(claim.Value == comment.ApplicationUserId)
+        {
             _unitOfWork.Comment.Remove(comment);
-    
-        _unitOfWork.Save();
 
-        return RedirectToAction("Detail", new { productId = comment.ProductId });
+            _unitOfWork.Save();
+
+            return RedirectToAction("Detail", new { productId = comment.ProductId });
+        }
+        else
+        {
+            return RedirectToAction("Detail", new { productId = comment.ProductId });
+        }
+
     }
 
-    public IActionResult Remove(int cartId)
-    {
-        var cart = _unitOfWork.ShoppingCart.GetFirstOrDefault(u => u.Id == cartId);
-        _unitOfWork.ShoppingCart.Remove(cart);
-        _unitOfWork.Save();
-        return RedirectToAction(nameof(Index));
-    }
+
 
 }
 
