@@ -44,14 +44,17 @@
 									</div>
 						    </div>
 
-						<div class="row justify-content-center mb-5 h-10">
-							<div class="row col">
-								<div class="bg-light col-4 text-center btn"><i class="bi bi-plus-circle-fill"></i></div>
-								<div class="bg-light col-4 text-center">4</div>
-								<div class=" col-4 text-center btn" style=" border-radius: 20px; "><i class="bi bi-plus-circle-fill"></i></div>
+						<div class="row justify-content-between mb-5 h-10">
+							<div class="row  col-5" style="margin-left:5px;">
+								<a asp-action="plus" asp-route-productId="@product.Id" class="btn d-flex align-content-center justify-content-center " style="width:20px;height:20px;">
+									<i class="bi bi-plus-square"></i>
+								</a> &nbsp;
+								<a asp-action="minus" asp-route-productId="@product.Id" class="btn d-flex align-content-center justify-content-center " style="width:20px;height:20px;">
+									<i class="bi bi-dash-square"></i>
+								</a>
 							</div>
-							<div class=" col-6">
-						<a asp-controller="Home" asp-action="Detail" class="btn form-control text-light" style="border-radius: 20px; background-color:#65C26F;" asp-route-productId="@product.Id">
+							<div class=" col-7">
+						    <a asp-controller="Home" asp-action="Detail" class="btn form-control text-light" style="border-radius: 20px; background-color:#65C26F;" asp-route-productId="@product.Id">
 									Detail
 								</a>
 							</div>

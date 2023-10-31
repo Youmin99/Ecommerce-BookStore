@@ -17,8 +17,16 @@
       "PackagePath": "staticwebassets\\images\\book.jpg"
     },
     {
+      "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\13150c90-e8e6-4f6f-aaed-28d84be03ed3.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\13150c90-e8e6-4f6f-aaed-28d84be03ed3.jpg"
+    },
+    {
       "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\92ef0aa2-1a53-471f-9fc7-e5f01da997ec.jpg",
       "PackagePath": "staticwebassets\\images\\product\\92ef0aa2-1a53-471f-9fc7-e5f01da997ec.jpg"
+    },
+    {
+      "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\95e583c8-5298-42c0-9bd9-cfa4b2a32448.png",
+      "PackagePath": "staticwebassets\\images\\product\\95e583c8-5298-42c0-9bd9-cfa4b2a32448.png"
     },
     {
       "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\a88c219a-afec-4034-93be-d420a2fd0e53.png",
@@ -27,6 +35,14 @@
     {
       "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\cba82768-72b8-4d2e-bbbe-96b377b4043f.jpg",
       "PackagePath": "staticwebassets\\images\\product\\cba82768-72b8-4d2e-bbbe-96b377b4043f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\images\\product\\ddaab375-36a3-4de6-8eef-39606df90563.png",
+      "PackagePath": "staticwebassets\\images\\product\\ddaab375-36a3-4de6-8eef-39606df90563.png"
+    },
+    {
+      "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\js\\order.js",
+      "PackagePath": "staticwebassets\\js\\order.js"
     },
     {
       "Id": "C:\\Users\\engli\\source\\repos\\Bulky\\BulkyWed\\wwwroot\\js\\product.js",

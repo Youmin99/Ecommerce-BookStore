@@ -85,6 +85,7 @@ namespace BulkyWed.Areas.Customer.Controllers
 			ShoppingCartVM.ListCart = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == claim.Value,
 				includeProperties: "Product");
 
+
 			ShoppingCartVM.OrderHeader.PaymentStatus = SD.PaymentStatusPending;
 			ShoppingCartVM.OrderHeader.OrderStatus = SD.StatusPending;
 
@@ -151,10 +152,26 @@ namespace BulkyWed.Areas.Customer.Controllers
 			Response.Headers.Add("Location", session.Url);
 			return new StatusCodeResult(303);
 		}
+
 		public IActionResult OrderConfirmation(int id)
 		{
 			OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id);
+			if (orderHeader.PaymentStatus != SD.PaymentStatusDelayedPayment)
+			{
+				var service = new SessionService();
+				Session session = service.Get(orderHeader.SessionId);
+				//check the stripe status
+				if (session.PaymentStatus.ToLower() == "paid")
+				{
+					_unitOfWork.OrderHeader.UpdateStatus(id, SD.StatusApproved, SD.PaymentStatusApproved);
+					_unitOfWork.Save();
+				}
+			}
 
+			List<ShoppingCart> shoppingCarts = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId ==
+			orderHeader.ApplicationUserId).ToList();
+			_unitOfWork.ShoppingCart.RemoveRange(shoppingCarts);
+			_unitOfWork.Save();
 			return View(id);
 		}
 

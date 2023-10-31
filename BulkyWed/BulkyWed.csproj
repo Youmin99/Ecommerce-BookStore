@@ -41,6 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Admin\Views\Order\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Order\PaymentConfirmation.cshtml" />
     <None Include="Areas\Customer\Views\Cart\Index.cshtml" />
     <None Include="Areas\Customer\Views\Cart\OrderConfirmation.cshtml" />
   </ItemGroup>

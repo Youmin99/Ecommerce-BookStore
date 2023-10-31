@@ -409,8 +409,6 @@ C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.AspNe
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.AspNetCore.Cors.dll
-C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.AspNetCore.DataProtection.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
@@ -497,14 +495,11 @@ C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Exten
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.Features.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
-C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.Hosting.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.Http.dll
-C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.Identity.Core.dll
-C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.Localization.dll
 C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
@@ -695,3 +690,5 @@ C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Cust
 C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Identity\Pages\Account\Register.cshtml.rz.scp.css
 C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Identity\Pages\Account\Login.cshtml.rz.scp.css
 C:\Users\engli\source\repos\Bulky\BulkyWed\obj\Debug\net7.0\scopedcss\Areas\Customer\Views\Cart\Index.cshtml.rz.scp.css
+C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\Stripe.net.dll
+C:\Users\engli\source\repos\Bulky\BulkyWed\bin\Debug\net7.0\appsettings.Production.json

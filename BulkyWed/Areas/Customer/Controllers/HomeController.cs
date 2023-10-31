@@ -38,7 +38,6 @@ namespace BulkyWed.Areas.Customer.Controllers;
 		}
 
 
-
 		return View(productList);
     }
 
@@ -131,6 +130,52 @@ namespace BulkyWed.Areas.Customer.Controllers;
         }
 
     }
+
+	[Authorize]
+	public IActionResult Plus(int productId)
+	{
+		var claimsIdentity = (ClaimsIdentity)User.Identity;
+		var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+		var cart = _unitOfWork.ShoppingCart.GetFirstOrDefault(u => u.ApplicationUserId == claim.Value && u.ProductId == productId);
+
+        if(cart == null)
+        {
+            ShoppingCart Cart = new()
+            {
+                Count = 1,
+                ProductId = productId,
+                Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == productId, includeProperties: "Category,CoverType")
+            };
+			Cart.ApplicationUserId = claim.Value;
+			_unitOfWork.ShoppingCart.Add(Cart);
+		}
+        else
+        {
+			_unitOfWork.ShoppingCart.IncrementCount(cart, 1);
+		}
+		_unitOfWork.Save();
+		return RedirectToAction(nameof(Index));
+	}
+
+	[Authorize]
+	public IActionResult Minus(int productId)
+	{
+		var claimsIdentity = (ClaimsIdentity)User.Identity;
+		var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+		var cart = _unitOfWork.ShoppingCart.GetFirstOrDefault(u => u.ApplicationUserId == claim.Value && u.ProductId == productId);
+		if (cart.Count <= 1)
+		{
+			_unitOfWork.ShoppingCart.Remove(cart);
+		}
+		else
+		{
+			_unitOfWork.ShoppingCart.DecrementCount(cart, 1);
+		}
+		_unitOfWork.Save();
+		return RedirectToAction(nameof(Index));
+	}
 
 
 
